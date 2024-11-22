@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
-import NavigationBar from "@/components/NavigationBar";
+import NavigationBar from "@/components/navigation-bar/NavigationBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

@@ -1,5 +1,5 @@
 "use client";
-import { NFT_CONTRACTS } from "@/consts/nft_contracts";
+// import { NFT_CONTRACTS } from "@/consts/nft_contracts";
 import Image from "next/image";
 
 export default function Home() {
