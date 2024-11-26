@@ -43,8 +43,15 @@ export default function DarkModeToggle() {
     setIsDarkMode(false);
   };
 
+  // const toggleDarkMode = () => {
+  //   isDarkMode ? disableDarkMode() : enableDarkMode();
+  // };
   const toggleDarkMode = () => {
-    isDarkMode ? disableDarkMode() : enableDarkMode();
+    if (isDarkMode) {
+      disableDarkMode();
+    } else {
+      enableDarkMode();
+    }
   };
 
   return (
