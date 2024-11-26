@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import endhonesaLogo from "../../public/1.48.png";
-import bewareScams from "../../public/beware-of-scams.png";
+import endhonesaLogo from "../../../public/1.48.png";
+import bewareScams from "../../../public/beware-of-scams.png";
 import Link from "next/link";
 
 export default function Digital() {
