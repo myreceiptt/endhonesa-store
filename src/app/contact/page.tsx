@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import endhonesaLogo from "../../public/1.48.png";
+import bewareScams from "../../public/beware-of-scams.png";
 import Link from "next/link";
 
-export default function Home() {
+export default function Contact() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => setIsModalOpen(true);
@@ -19,10 +21,8 @@ export default function Home() {
           className="focus:outline-none cursor-pointer">
           <Image
             className="invert-0 dark:invert"
-            src="/1.48.png"
+            src={endhonesaLogo}
             alt="ENDHONESA STORE"
-            width={1167}
-            height={154}
             priority
           />
         </button>
@@ -30,16 +30,18 @@ export default function Home() {
         {/* Main Text */}
         <div className="text-sm sm:text-left">
           <h1 className="mb-2 text-foreground dark:text-background text-center text-lg font-mono font-semibold">
-            ENDHONESA STORE{" "}
-            <code className="bg-foreground dark:bg-background text-background dark:text-foreground px-1 py-0.5 rounded font-semibold">
+            ENDHONESA STORE
+          </h1>
+          <h2 className="mb-2 text-foreground dark:text-background text-center text-lg font-mono font-semibold">
+            <code className="bg-foreground dark:bg-background text-background dark:text-foreground px-1 py-0.5 rounded text-base font-semibold">
               (TRY X ERROR)
             </code>
-          </h1>
-          <h2 className="text-foreground dark:text-background text-center text-lg font-semibold">
+          </h2>
+          <h3 className="text-foreground dark:text-background text-center text-lg font-semibold">
             This TRY and ERROR occurs where trade will always run well and as
             well as possible according to the income generated and the value
             formed by each citizen of ENDHONESA.
-          </h2>
+          </h3>
         </div>
 
         {/* Buttons */}
@@ -63,30 +65,41 @@ export default function Home() {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-foreground dark:bg-background z-50">
+        <div className="fixed inset-0 flex items-center justify-center bg-black dark:bg-white bg-opacity-85 dark:bg-opacity-85 z-50">
           <div className="relative">
             {/* First Image */}
             <Image
               className="invert dark:invert-0"
-              src="/beware-of-scams.png"
+              src={bewareScams}
               alt="Beware of Scams!"
               width={474}
               height={474}
-              priority
             />
 
             {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-2 right-2 text-background dark:text-foreground bg-foreground dark:bg-background rounded-full p-2 hover:scale-105 transition-transform">
-              &#x2715;
+              className="absolute bottom-4 right-4 rounded-full border-2 border-solid border-transparent bg-background dark:bg-foreground text-foreground dark:text-background hover:border-background dark:hover:border-foreground hover:bg-foreground dark:hover:bg-background hover:text-background dark:hover:text-foreground block items-center justify-center text-2xl font-bold p-1 transition-colors duration-300 ease-in-out"
+              type="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
             </button>
           </div>
         </div>
       )}
 
       {/* Footer */}
-      <footer className="row-start-3 flex gap-2 flex-wrap items-center justify-center text-foreground dark:text-background">
+      <footer className="row-start-4 flex gap-2 flex-wrap items-center justify-center text-foreground dark:text-background">
         All right of
         <span className="flex items-center gap-2 bg-foreground dark:bg-background text-background dark:text-foreground px-1 py-0.5 rounded font-semibold">
           <Image
