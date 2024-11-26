@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThirdwebProvider } from "thirdweb/react";
-import NavigationBar from "@/components/navigation-bar/NavigationBar";
+import NavigationBar from "@/components/navbar/NavigationBar";
 
+// Load custom fonts
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -15,11 +15,19 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+// Metadata for the site
 export const metadata: Metadata = {
-  title: "MEMORA NFT (UJI X COBA)",
+  title: "ENDHONESA STORE (TRY X ERROR)",
   description:
-    "UJIAN dan COBAAN ini terjadi dimana perdagangan akan senantiasa berjalan dengan baik dan sebaik-baiknya sesuai dengan pendapatan yang dihasilkan dan nilai yang dibentuk oleh masing-masing warga-penduduknya.",
+    "This TRY and ERROR occurs where trade will always run well and as well as possible according to the income generated and the value formed by each citizen of ENDHONESA.",
 };
+
+// Utility function to detect theme preference
+function getThemeClass() {
+  const prefersDarkMode = typeof window !== "undefined" &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return prefersDarkMode ? "dark" : "";
+}
 
 export default function RootLayout({
   children,
@@ -27,14 +35,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={getThemeClass()}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-background dark:bg-foreground ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThirdwebProvider>
-          <NavigationBar />
-          {children}
-        </ThirdwebProvider>
+        <NavigationBar />
+        {children}
       </body>
     </html>
   );

@@ -1,10 +1,10 @@
-# MEMORA NFT (UJI X COBA)
+# ENDHONESA STORE (TRY X ERROR)
 
 Tenang!  
 Ini hanyalah UJIAN dan COBAAN saja!  
 Harap tenang!
 
-UJIAN dan COBAAN ini terjadi dimana perdagangan akan senantiasa berjalan dengan baik dan sebaik-baiknya sesuai dengan pendapatan yang dihasilkan dan nilai yang dibentuk oleh masing-masing warga-penduduknya.
+UJIAN dan COBAAN ini terjadi dimana perdagangan akan senantiasa berjalan dengan baik dan sebaik-baiknya sesuai dengan pendapatan yang dihasilkan dan nilai yang dibentuk oleh masing-masing warga-penduduk ENDHONESA.
 
 Harap tenang!  
 Ini UJIAN dan COBAAN saja!  
