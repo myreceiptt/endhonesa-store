@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function NavBrand() {
+export default function BrandTitleLogo() {
   return (
     <Link
       href="/"

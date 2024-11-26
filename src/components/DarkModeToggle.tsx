@@ -1,58 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useDarkMode } from "@/context/DarkModeContext";
 
 export default function DarkModeToggle() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  // Synchronize dark mode with system preference and localStorage
-  useEffect(() => {
-    const darkMode = localStorage.getItem("darkMode");
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (darkMode === "enabled" || (!darkMode && prefersDarkMode)) {
-      enableDarkMode();
-    } else {
-      disableDarkMode();
-    }
-
-    // Listen for system theme changes
-    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-      if (e.matches) enableDarkMode();
-      else disableDarkMode();
-    };
-
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    mediaQuery.addEventListener("change", handleSystemThemeChange);
-
-    return () =>
-      mediaQuery.removeEventListener("change", handleSystemThemeChange);
-  }, []);
-
-  const enableDarkMode = () => {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("darkMode", "enabled");
-    setIsDarkMode(true);
-  };
-
-  const disableDarkMode = () => {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("darkMode", "disabled");
-    setIsDarkMode(false);
-  };
-
-  // const toggleDarkMode = () => {
-  //   isDarkMode ? disableDarkMode() : enableDarkMode();
-  // };
-  const toggleDarkMode = () => {
-    if (isDarkMode) {
-      disableDarkMode();
-    } else {
-      enableDarkMode();
-    }
-  };
+  const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <button

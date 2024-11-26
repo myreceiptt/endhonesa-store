@@ -1,12 +1,12 @@
 import Link from "next/link";
 import DarkModeToggle from "./DarkModeToggle";
 
-type NavLinksProps = {
+type DesktopMenuProps = {
   navItems: { name: string; href: string }[];
   className?: string;
 };
 
-export default function NavLinks({ navItems, className = "" }: NavLinksProps) {
+export default function DesktopMenu({ navItems, className = "" }: DesktopMenuProps) {
   return (
     <div className={className}>
       <ul className="flex flex-row items-center gap-6">
@@ -20,7 +20,7 @@ export default function NavLinks({ navItems, className = "" }: NavLinksProps) {
           </li>
         ))}
 
-        {/* DarkModeToggle */}
+        {/* Dark Mode Toggle Button */}
         <li>
           <DarkModeToggle />
         </li>

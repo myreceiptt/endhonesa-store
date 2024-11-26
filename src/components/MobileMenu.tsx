@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import DarkModeToggle from "./DarkModeToggle";
 
@@ -52,7 +50,7 @@ export default function MobileMenu({
           </li>
         ))}
 
-        {/* DarkModeToggle */}
+        {/* Dark Mode Toggle Button */}
         <li>
           <DarkModeToggle />
         </li>
