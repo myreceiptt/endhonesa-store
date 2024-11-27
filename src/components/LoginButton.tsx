@@ -11,8 +11,8 @@ import {
 import type { Wallet } from "thirdweb/wallets";
 import { client } from "@/consts/client";
 import { createWallet, inAppWallet } from "thirdweb/wallets";
-import { useGetEnsAvatar } from "@/hooks/useGetENSAvatar";
-import { useGetEnsName } from "@/hooks/useGetENSName";
+import { useGetEnsAvatar } from "@/hooks/useGetAvatar";
+import { useGetEnsName } from "@/hooks/useGetName";
 import Link from "next/link";
 
 const wallets = [

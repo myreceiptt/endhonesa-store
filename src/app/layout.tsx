@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/globals.css";
+import { ThirdwebProvider } from "thirdweb/react";
 import { DarkModeProvider } from "@/context/DarkModeContext";
 import NavigationBar from "@/components/NavBar";
 
@@ -37,10 +38,12 @@ export default function RootLayout({
     <html lang="en" className={getThemeClass()}>
       <body
         className={`bg-background dark:bg-foreground ${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <DarkModeProvider>
-          <NavigationBar />
-          {children}
-        </DarkModeProvider>
+        <ThirdwebProvider>
+          <DarkModeProvider>
+            <NavigationBar />
+            {children}
+          </DarkModeProvider>
+        </ThirdwebProvider>
       </body>
     </html>
   );
