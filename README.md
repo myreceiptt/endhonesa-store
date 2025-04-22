@@ -28,14 +28,14 @@ Dengan menggunakan perambah situs web milikmu, buka [http://localhost:3000](http
 
 Kamu bisa mulai memodifikasi halaman tersebut dengan menyunting isi dari berkas `app/page.tsx`. Halaman tersebut akan otomatis diperbarui seiring dengan kamu menyunting berkasnya.
 
-Proyek ini menggunakan berbagai sumber daya yang dimanfaatkan dengan baik oleh [`Prof. NOTA Inc.`](https://nota.straight-line.org/profile).
+Proyek ini menggunakan berbagai sumber daya yang dimanfaatkan dengan baik oleh [`Prof. NOTA Inc.`](https://nota.endhonesa.com/profile).
 
 ## Pelajari Lagi!
 
-Untuk mempelajari lebih lanjut tentang proyek ini, silahkan menghubungi [`Prof. NOTA Inc.`](https://nota.straight-line.org/profile) melalui tautan-tautan berikut ini:
+Untuk mempelajari lebih lanjut tentang proyek ini, silahkan menghubungi [`Prof. NOTA Inc.`](https://nota.endhonesa.com/profile) melalui tautan-tautan berikut ini:
 
-- [Kontak Prof. NOTA Inc.](https://nota.straight-line.org/contact) - Narahubung Prof. NOTA Inc. di Semesta 0101.
-- [Prof. NOTA's Console](https://prompt.straight-line.org/) - Jendela komunikasi tingkat rendah dengan Prof. NOTA.
+- [Kontak Prof. NOTA Inc.](https://nota.endhonesa.com/contact) - Narahubung Prof. NOTA Inc. di Semesta 0101.
+- [Prof. NOTA's Console](https://prompt.endhonesa.com/) - Jendela komunikasi tingkat rendah dengan Prof. NOTA.
 
 Kamu juga bisa memberikan sumbangan kritik dan saran, sebab kritik dan saran kalian adalah kontribusi yang sangat kami harapkan.
 

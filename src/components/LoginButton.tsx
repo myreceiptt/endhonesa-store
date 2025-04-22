@@ -130,7 +130,7 @@ export default function LoginButton() {
                   connectModal={{
                     size: "wide",
                     title: "Please LOGIN!",
-                    // titleIcon: "https://nota.straight-line.org/og.png",
+                    // titleIcon: "https://nota.endhonesa.com/og.png",
                     // welcomeScreen: {
                     //   title: "ENDHONESA STORE",
                     //   subtitle:
@@ -143,9 +143,9 @@ export default function LoginButton() {
                     // },
                     showThirdwebBranding: false,
                     // termsOfServiceUrl:
-                    //   "https://nota.straight-line.org/profile",
+                    //   "https://nota.endhonesa.com/profile",
                     // privacyPolicyUrl:
-                    //   "https://nota.straight-line.org/profile",
+                    //   "https://nota.endhonesa.com/profile",
                   }}
                 />
               </li>
@@ -253,7 +253,7 @@ function ProfileButton({
               connectModal={{
                 size: "wide",
                 title: "Please LOGIN!",
-                // titleIcon: "https://nota.straight-line.org/og.png",
+                // titleIcon: "https://nota.endhonesa.com/og.png",
                 // welcomeScreen: {
                 //   title: "ENDHONESA STORE",
                 //   subtitle:
@@ -266,9 +266,9 @@ function ProfileButton({
                 // },
                 showThirdwebBranding: false,
                 // termsOfServiceUrl:
-                //   "https://nota.straight-line.org/profile",
+                //   "https://nota.endhonesa.com/profile",
                 // privacyPolicyUrl:
-                //   "https://nota.straight-line.org/profile",
+                //   "https://nota.endhonesa.com/profile",
               }}
             />
           </li>
