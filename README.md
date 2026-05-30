@@ -12,23 +12,49 @@ Tenang!
 
 ## Mari Mulai!
 
-Pertama-tama, jalankan peladen pengembangan menggunakan salah satu dari perintah berikut ini:
+Gunakan Node.js 24.x dan npm 11.x.
 
 ```bash
+nvm use
+npm ci
 npm run dev
-# atau
-yarn dev
-# atau
-pnpm dev
-# atau
-bun dev
 ```
 
 Dengan menggunakan perambah situs web milikmu, buka [http://localhost:3000](http://localhost:3000) untuk melihat wujud hasilnya.
 
-Kamu bisa mulai memodifikasi halaman tersebut dengan menyunting isi dari berkas `app/page.tsx`. Halaman tersebut akan otomatis diperbarui seiring dengan kamu menyunting berkasnya.
+Kamu bisa mulai memodifikasi halaman tersebut dengan menyunting isi dari berkas `src/app/page.tsx`. Halaman tersebut akan otomatis diperbarui seiring dengan kamu menyunting berkasnya.
+
+## Environment
+
+Buat file `.env.local` dari `.env.example`, lalu isi nilai berikut:
+
+```bash
+NEXT_PUBLIC_TW_CLIENT_ID=
+```
+
+## Pemeriksaan
+
+```bash
+npm run lint
+npm run build
+npm audit --audit-level=moderate
+```
 
 Proyek ini menggunakan berbagai sumber daya yang dimanfaatkan dengan baik oleh [`Prof. NOTA Inc.`](https://nota.endhonesa.com/profile).
+
+## Evergreen Maintenance
+
+- Class: **A — App Repo**
+- Runtime: **Node.js 24.x**
+- Package manager: **npm 11.x**
+- Framework: **Next.js 16.2.6**
+- React: **19.2.6**
+- Web3 stack: **thirdweb 5.120.0**
+- Styling: **Tailwind CSS 4.3.0**
+- Notes:
+  - `@types/node` dipin di versi 24.x karena target runtime adalah Node.js 24.x.
+  - `eslint` dipin di versi 9.x karena `eslint-config-next` 16.2.6 masih memakai plugin ekosistem yang belum sepenuhnya menerima ESLint 10.
+  - Sisa audit berasal dari dependency transitive Web3/Next ecosystem dan tidak memiliki perbaikan non-breaking dari dependency langsung saat log Evergreen ini dibuat.
 
 ## Pelajari Lagi!
 

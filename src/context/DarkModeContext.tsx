@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 interface DarkModeContextType {
   isDarkMode: boolean;
@@ -12,6 +18,24 @@ interface DarkModeContextType {
 const DarkModeContext = createContext<DarkModeContextType | undefined>(
   undefined
 );
+
+function getInitialDarkMode() {
+  if (typeof window === "undefined") {
+    return false;
+  }
+
+  const darkMode = localStorage.getItem("darkMode");
+  const prefersDarkMode = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+
+  return darkMode === "enabled" || (!darkMode && prefersDarkMode);
+}
+
+function applyDarkMode(isEnabled: boolean) {
+  document.documentElement.classList.toggle("dark", isEnabled);
+  localStorage.setItem("darkMode", isEnabled ? "enabled" : "disabled");
+}
 
 export const useDarkMode = () => {
   const context = useContext(DarkModeContext);
@@ -28,23 +52,26 @@ export const DarkModeProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(getInitialDarkMode);
+
+  const enableDarkMode = useCallback(() => {
+    applyDarkMode(true);
+    setIsDarkMode(true);
+  }, []);
+
+  const disableDarkMode = useCallback(() => {
+    applyDarkMode(false);
+    setIsDarkMode(false);
+  }, []);
 
   useEffect(() => {
-    const darkMode = localStorage.getItem("darkMode");
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
-
-    if (darkMode === "enabled" || (!darkMode && prefersDarkMode)) {
-      enableDarkMode();
-    } else {
-      disableDarkMode();
-    }
+    applyDarkMode(isDarkMode);
 
     const handleSystemThemeChange = (e: MediaQueryListEvent) => {
-      if (e.matches) enableDarkMode();
-      else disableDarkMode();
+      if (!localStorage.getItem("darkMode")) {
+        applyDarkMode(e.matches);
+        setIsDarkMode(e.matches);
+      }
     };
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -53,19 +80,7 @@ export const DarkModeProvider = ({
     return () => {
       mediaQuery.removeEventListener("change", handleSystemThemeChange);
     };
-  }, []);
-
-  const enableDarkMode = () => {
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("darkMode", "enabled");
-    setIsDarkMode(true);
-  };
-
-  const disableDarkMode = () => {
-    document.documentElement.classList.remove("dark");
-    localStorage.setItem("darkMode", "disabled");
-    setIsDarkMode(false);
-  };
+  }, [isDarkMode]);
 
   const toggleDarkMode = () => {
     if (isDarkMode) {
