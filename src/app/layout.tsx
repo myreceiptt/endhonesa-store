@@ -22,20 +22,13 @@ export const metadata: Metadata = {
     "This TRY and ERROR occurs where trade will always run well and as well as possible according to the income generated and the value formed by each citizen of ENDHONESA.",
 };
 
-function getThemeClass() {
-  const prefersDarkMode =
-    typeof window !== "undefined" &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-  return prefersDarkMode ? "dark" : "";
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={getThemeClass()}>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`bg-background dark:bg-foreground ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThirdwebProvider>
